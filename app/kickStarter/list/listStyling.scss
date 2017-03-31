@@ -1,0 +1,66 @@
+.kh-project-list {
+  padding: 2% 15%;
+
+  .md-button {
+    border: 1px solid #20a8e9;
+    border-radius: 5px;
+    margin: 0px 1px !important;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  md-toolbar {
+    background-color: transparent;
+    min-height: 0;
+
+    .md-button {
+      min-width: 0;
+    }
+    p, i {
+      font-size: 16px;
+      color: black;
+    }
+  }
+
+  .kh-sort {
+
+    div {
+      padding: 0.5% 1%;
+    }
+
+    p {
+      line-height: 45px;
+    }
+
+    .md-button {
+      margin: 0;
+      margin-left: 2% !important;
+    }
+  }
+
+  .kh-filter {
+    md-input-container {
+      padding-top: 8%;
+    }
+    .md-button {
+      color: black !important;
+      font-size: 16px;
+      margin-left: 5%;
+    }
+  }
+
+  md-input-container {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  h4 {
+    margin: 8px 8px 8px 0;
+    font-weight: 400;
+  }
+}

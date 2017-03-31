@@ -11,7 +11,7 @@ app.config([ '$routeProvider', '$locationProvider',
         title: 'Home',
         resolve: {
           currentSectionTemplate: function () {
-            return 'home/homeTemplate.html';
+            return 'list/listTemplate.html';
           }
         }
       });

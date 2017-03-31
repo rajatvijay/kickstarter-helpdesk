@@ -1,0 +1,69 @@
+<div ng-controller="listController" class="kh-project-list">
+
+  <md-toolbar layout="row" layout-align="space-between" layout-wrap>
+
+    <md-input-container flex>
+      <label for="search">Project Name</label>
+      <input type="text" ng-model="searchString" id="search" flex="100"/>
+    </md-input-container>
+
+    <div layout="row" layout-align="center center" flex="100" class="kh-sort">
+
+      <div layout="row" class="kh-filter" flex="40" layout-align="start center">
+        <md-input-container flex="20" >
+          <!--<label for="filter">Backers</label>-->
+          <input type="text" id="filter" ng-model="noBackers"/>
+        </md-input-container>
+
+        <md-button ng-click="">
+          Filter by # backers
+        </md-button>
+      </div>
+
+      <!-- Sort By End Date -->
+      <div layout="row" flex="30">
+        <p>
+          Sort by End Date
+        </p>
+        <md-button ng-click="changeSorting('end.date', false)">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </md-button>
+        <md-button ng-click="changeSorting('end.date', true)">
+          <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        </md-button>
+      </div>
+
+      <!-- Sort By % funded -->
+      <div layout="row" flex="30">
+        <p>
+          Sort by percentage funded
+        </p>
+        <md-button ng-click="changeSorting('percentage.funded', false)">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </md-button>
+        <md-button ng-click="changeSorting('percentage.funded', true)">
+          <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        </md-button>
+      </div>
+    </div>
+  </md-toolbar>
+
+  <md-content>
+    <div ng-repeat="project in projects | searchFor:searchString" layout="column">
+      <h1>{{ project.title }}</h1>
+
+      <div layout="row" layout-align="space-between">
+        <div layout="column">
+          <h4>Pleadge - {{ project['amt.pledged'] }}</h4>
+          <h4>Backers - {{ project['num.backers'] }}</h4>
+        </div>
+        <div layout="row" layout-align="center center">
+          <md-button ng-click="viewProject(project)">
+            View Project
+          </md-button>
+        </div>
+      </div>
+    </div>
+  </md-content>
+
+</div>

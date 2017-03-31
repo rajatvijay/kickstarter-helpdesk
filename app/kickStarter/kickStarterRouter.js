@@ -14,6 +14,16 @@ app.config([ '$routeProvider', '$locationProvider',
             return 'list/listTemplate.html';
           }
         }
+      })
+      .when('/project/details', {
+        controller: 'kickStarterBaseController',
+        templateUrl: '/kickStarter/base.html',
+        title: 'Details',
+        resolve: {
+          currentSectionTemplate: function () {
+            return 'details/detailsTemplate.html';
+          }
+        }
       });
     $locationProvider.html5Mode({
       enabled: true

@@ -1,0 +1,19 @@
+<div ng-controller="detailsController" class="kh-details">
+
+  <a href="/">Go back</a>
+
+  <h1>{{ project.title }}</h1>
+
+  <div layout="row" layout-align="space-between">
+    <div layout="column">
+      <h4>Pleadge - {{ project['amt.pledged'] }}</h4>
+      <h4>Backers - {{ project['num.backers'] }}</h4>
+      <h4>Blurb - {{ project['blurb'] }}</h4>
+    </div>
+    <div layout="row" layout-align="center center">
+      <md-button ng-click="viewProject(project)">
+        View Project
+      </md-button>
+    </div>
+  </div>
+</div>

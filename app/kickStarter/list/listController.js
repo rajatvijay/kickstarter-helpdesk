@@ -2,9 +2,12 @@
  * Created by rajat on 31/3/17.
  */
 
-app.controller('listController', ['$scope', 'listService', '$window', function ($scope, listService, $window) {
+app.controller('listController', ['$scope', 'projectService', '$window', '$location',
+function ($scope, projectService, $window, $location) {
 
-  listService.getProjects().then(function (response) {
+  projectService.detailedProject = null;
+
+  projectService.getProjects().then(function (response) {
 
     $scope.projects = response;
 
@@ -17,12 +20,9 @@ app.controller('listController', ['$scope', 'listService', '$window', function (
   $scope.getDaysFromTodayText = function (project) {
     var today = new Date();
     var oneDay = 1000 * 60 * 60 * 24;
-    var days = Math.round((new Date(project['end.time'] - today.getTime()).getTime()) / oneDay);
+    var days = Math.round((new Date(project['end.time']).getTime() - today.getTime()) / oneDay);
 
-    console.log(days);
-
-    console.log(parseInt(days) > 0 ? (days + ' remaining') : (days + ' passed since campaign ended'));
-    return days > 0 ? (parseInt(days) + ' remaining') : (days + ' passed since campaign ended');
+    return days > 0 ? (parseInt(days) + ' remaining') : (days * (-1) + ' passed since campaign ended');
   };
 
   $scope.changeSorting = function (sortByParam, sortReverse) {
@@ -36,7 +36,12 @@ app.controller('listController', ['$scope', 'listService', '$window', function (
   };
 
   $scope.viewProject = function (project) {
-    $window.open('https://www.kickstarter.com/' + project.url, '_blank');
+    projectService.viewProject(project);
   };
+
+  $scope.showDetails = function (project) {
+    projectService.setDetailedProject(project);
+    $location.path('/project/details');
+  }
 
 }]);

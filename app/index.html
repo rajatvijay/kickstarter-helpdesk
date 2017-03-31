@@ -1,0 +1,50 @@
+<html ng-app="app">
+
+<head>
+  <base href="/">
+
+  <!-- SEO -->
+  <meta name="fragment" content="!">
+
+  <!-- hot stuff -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--Title-->
+  <title ng-bind="title + ' | KickStarter'">KickStarter</title>
+
+  <!-- Fecebook Meta Tags -->
+  <meta property="og:title" content="KickStarter"/>
+  <meta property="og:site_name" content="KickStarter Helpdesk"/>
+  <meta property="og:description" content="App to display kickstarter projects"  />
+
+  <!-- vendor css -->
+  <link rel="stylesheet" type="text/css" href="css/externals.css">
+
+  <!-- app css-->
+  <link rel="stylesheet" href="css/app.css">
+
+  <!--font-awesome-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<div ng-cloak="true" style="overflow: hidden;"  ng-controller="baseController as base">
+
+
+  <div layout="column"  ng-view layout-fill></div>
+
+
+</div>
+
+<!-- Vendor libraries -->
+<script src="js/externals.js"></script>
+
+<!-- app -->
+<script type="text/javascript" src="js/app.js"></script>
+
+</body>
+
+</html>

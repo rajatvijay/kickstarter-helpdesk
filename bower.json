@@ -1,0 +1,27 @@
+{
+  "name": "rajat",
+  "description": "App to display kickstarter projects",
+  "main": "index.js",
+  "authors": [
+    "Rajat Vijay"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "kickstarter"
+  ],
+  "homepage": "https://github.com/rajatvijay/kickstarter-helpdesk",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-loading-bar": "^0.9.0",
+    "angular-animate": "^1.6.3",
+    "angular-material": "~1.0.5",
+    "angular-route": "~1.4.7"
+  }
+}

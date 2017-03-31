@@ -2,7 +2,7 @@
  * Created by rajat on 1/4/17.
  */
 
-app.config([ '$routeProvider', '$locationProvider',
+app.config(['$routeProvider', '$locationProvider',
   function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {

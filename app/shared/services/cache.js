@@ -40,7 +40,7 @@ ng.module('app').provider('cache', [
           } else {
             var cacheObj = JSON.parse(localStorage.getItem(key));
 
-            if (! cacheObj) {
+            if (!cacheObj) {
               return null;
             }
 
@@ -71,7 +71,7 @@ ng.module('app').provider('cache', [
         };
 
         cache.flush = function () {
-          cache._hash = {} ;
+          cache._hash = {};
           localStorage.clear();
         };
 

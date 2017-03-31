@@ -30,9 +30,7 @@ app.run(['$rootScope', '$location', function ($rootScope) {
 
 app.controller('baseController', ['$scope', function ($scope) {
 
-  console.log('base controller called!');
-
-  // Base Functions
+    // Base Functions
 
   }]
 );

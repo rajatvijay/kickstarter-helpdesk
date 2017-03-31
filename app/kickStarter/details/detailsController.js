@@ -3,12 +3,12 @@
  */
 
 app.controller('detailsController', ['$scope', 'projectService',
-function ($scope, projectService) {
+  function ($scope, projectService) {
 
-  $scope.project = projectService.getDetailedProject();
+    $scope.project = projectService.getDetailedProject();
 
-  $scope.viewProject = function (project) {
-    projectService.viewProject(project);
-  };
+    $scope.viewProject = function (project) {
+      projectService.viewProject(project);
+    };
 
-}]);
+  }]);
